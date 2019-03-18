@@ -1561,6 +1561,143 @@ public class Assert {
   }
 
   /**
+   * Asserts that two arrays does not contain equal elements in the same order. If they do, an
+   * AssertionError is thrown.
+   *
+   * @param actual the actual value
+   * @param expected the expected value
+   */
+  public static void assertNotEquals(double[] actual, double[] expected){
+    assertNotEquals(actual, expected, null);
+  }
+
+  /**
+   * Asserts that two arrays does not contain equal elements in the same order. If they do, an
+   * AssertionError is thrown.
+   *
+   * @param actual the actual value
+   * @param expected the expected value
+   * @param message the assertion error message
+   */
+  public static void assertNotEquals(double[] actual, double[] expected, String message){
+    boolean fail;
+    try {
+      Assert.assertEquals(actual, expected, message);
+      fail = true;
+    } catch (AssertionError e) {
+      fail = false;
+    }
+
+    if (fail) {
+      Assert.fail(message);
+    }
+
+  }
+
+  /**
+   * Asserts that two arrays does not contain the equal elements concerning a delta in the same order. If they do, an
+   * AssertionError is thrown.
+   *
+   * @param actual the actual value
+   * @param expected the expected value
+   * @param delta the absolute tolerable difference between the actual and expected values
+   */
+  public static void assertNotEquals(double[] actual, double[] expected, double delta){
+    assertNotEquals(actual, expected, delta, null);
+  }
+
+  /**
+   * Asserts that two arrays does not contain the equal elements concerning a delta in the same order. If they do, an
+   * AssertionError is thrown.
+   *
+   * @param actual the actual value
+   * @param expected the expected value
+   * @param delta the absolute tolerable difference between the actual and expected values
+   * @param message the assertion error message
+   */
+  public static void assertNotEquals(double[] actual, double[] expected, double delta, String message){
+    boolean fail;
+    try {
+      Assert.assertEquals(actual, expected, delta, message);
+      fail = true;
+    } catch (AssertionError e) {
+      fail = false;
+    }
+
+    if (fail) {
+      Assert.fail(message);
+    }
+  }
+
+  /**
+   * Asserts that two arrays does not contain equal elements in the same order. If they do, an
+   * AssertionError is thrown.
+   *
+   * @param actual the actual value
+   * @param expected the expected value
+   */
+  public static void assertNotEquals(float[] actual, float[] expected){
+    assertNotEquals(actual, expected, null);
+  }
+
+  /**
+   * Asserts that two arrays does not contain equal elements in the same order. If they do, an
+   * AssertionError is thrown.
+   *
+   * @param actual the actual value
+   * @param expected the expected value
+   * @param message the assertion error message
+   */
+  public static void assertNotEquals(float[] actual, float[] expected, String message){
+    boolean fail;
+    try {
+      Assert.assertEquals(actual, expected, message);
+      fail = true;
+    } catch (AssertionError e) {
+      fail = false;
+    }
+
+    if (fail) {
+      Assert.fail(message);
+    }
+  }
+
+  /**
+   * Asserts that two arrays does not contain the equal elements concerning a delta in the same order. If they do, an
+   * AssertionError is thrown.
+   *
+   * @param actual the actual value
+   * @param expected the expected value
+   * @param delta the absolute tolerable difference between the actual and expected values
+   */
+  public static void assertNotEquals(float[] actual, float[] expected, float delta){
+    assertNotEquals(actual, expected, delta, null);
+  }
+
+  /**
+   * Asserts that two arrays does not contain the equal elements concerning a delta in the same order. If they do, an
+   * AssertionError is thrown.
+   *
+   * @param actual the actual value
+   * @param expected the expected value
+   * @param delta the absolute tolerable difference between the actual and expected values
+   * @param message the assertion error message
+   */
+  public static void assertNotEquals(float[] actual, float[] expected, float delta, String message){
+    boolean fail;
+    try {
+      Assert.assertEquals(actual, expected, delta, message);
+      fail = true;
+    } catch (AssertionError e) {
+      fail = false;
+    }
+
+    if (fail) {
+      Assert.fail(message);
+    }
+  }
+
+  /**
    * This interface facilitates the use of {@link #expectThrows} from Java 8. It allows method
    * references to both void and non-void methods to be passed directly into expectThrows without
    * wrapping, even if they declare checked exceptions.

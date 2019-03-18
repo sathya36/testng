@@ -333,4 +333,60 @@ public class ArrayEqualityAssertTest {
         arrayCopy,
         "arrays inside arrays which are inside arrays themselves are compared by reference in assertEquals");
   }
+
+  @Test
+  public void unEqualDoubleArrayWithDeltaAssertNotEquals(){
+    double[] actual = {0.1d, 0.2d, 0.3d, 0.4d};
+    double[] expected = {0.5d, 0.7d, 0.1d, 0.2d};
+    assertNotEquals(actual, expected, 0.1d);
+  }
+
+  @Test(expectedExceptions = AssertionError.class)
+  public void equalDoubleArrayWithDeltaAssertNotEquals(){
+    double[] actual = {0.1d, 0.2d, 0.3d, 0.4d};
+    double[] expected = {0.5d, 0.7d, 0.1d, 0.2d};
+    assertNotEquals(actual, expected, 0.5d);
+  }
+
+  @Test
+  public void unEqualDoubleArrayAssertNotEquals(){
+    double[] actual = {0.1d, 0.2d, 0.3d, 0.4d};
+    double[] expected = {0.5d, 0.7d, 0.1d, 0.2d};
+    assertNotEquals(actual, expected);
+  }
+
+  @Test(expectedExceptions = AssertionError.class)
+  public void equalDoubleArrayAssertNotEquals(){
+    double[] actual = {0.1d, 0.2d, 0.3d, 0.4d};
+    double[] expected = {0.1d, 0.2d, 0.3d, 0.4d};
+    assertNotEquals(actual, expected);
+  }
+
+  @Test
+  public void unEqualFloatArrayWithDeltaAssertNotEquals(){
+    float[] actual = {0.1f, 0.2f, 0.3f, 0.4f};
+    float[] expected = {0.5f, 0.7f, 0.1f, 0.2f};
+    assertNotEquals(actual, expected, 0.1f);
+  }
+
+  @Test(expectedExceptions = AssertionError.class)
+  public void equalFloatArrayWithDeltaAssertNotEquals(){
+    float[] actual = {0.1f, 0.2f, 0.3f, 0.4f};
+    float[] expected = {0.5f, 0.7f, 0.1f, 0.2f};
+    assertNotEquals(actual, expected, 0.5f);
+  }
+
+  @Test
+  public void unEqualFloatArrayAssertNotEquals(){
+    float[] actual = {0.1f, 0.2f, 0.3f, 0.4f};
+    float[] expected = {0.5f, 0.7f, 0.1f, 0.2f};
+    assertNotEquals(actual, expected);
+  }
+
+  @Test(expectedExceptions = AssertionError.class)
+  public void EqualFloatArrayAssertNotEquals(){
+    float[] actual = {0.1f, 0.2f, 0.3f, 0.4f};
+    float[] expected = {0.1f, 0.2f, 0.3f, 0.4f};
+    assertNotEquals(actual, expected);
+  }
 }
